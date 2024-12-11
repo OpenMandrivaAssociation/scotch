@@ -6,7 +6,7 @@
 # This flag prevents internal links
 %global _disable_ld_no_undefined 1
 
-%define major 0
+%define major 7
 %define libname	%mklibname %{name}
 %define devname	%mklibname %{name} -d
 
@@ -23,7 +23,7 @@
 
 Summary:	Graph, mesh and hypergraph partitioning library
 Name:		scotch
-Version:	7.0.5
+Version:	7.0.6
 Release:	1
 Group:		System/Libraries
 License:	CeCILL-C
@@ -60,14 +60,13 @@ ptscotch sub-packages.
 %license doc/CeCILL-C_V1-en.txt
 %doc doc/*.pdf
 %doc doc/scotch_example.f
-%{_libdir}/libscotch.so.7*
-%{_libdir}/libesmumps.so.7*
-%{_libdir}/libptesmumps.so.7*
-%{_libdir}/libscotcherr.so.7*
-%{_libdir}/libscotcherrexit.so.7*
+%{_libdir}/libesmumps.so.%{major}*
+%{_libdir}/libscotch.so.%{major}*
+%{_libdir}/libscotcherr.so.%{major}*
+%{_libdir}/libscotcherrexit.so.%{major}*
 %if %{with metis}
-%{_libdir}/libscotchmetisv3.so.7*
-%{_libdir}/libscotchmetisv5.so.7*
+%{_libdir}/libscotchmetisv3.so.%{major}*
+%{_libdir}/libscotchmetisv5.so.%{major}*
 %endif
 
 #-----------------------------------------------------------------------
@@ -86,7 +85,6 @@ This package contains development libraries for scotch.
 %{_includedir}/scotch/scotchf.h
 %{_includedir}/scotch/esmumps.h
 %{_libdir}/libesmumps.so
-%{_libdir}/libptesmumps.so
 %{_libdir}/libscotch.so
 %{_libdir}/libscotcherr.so
 %{_libdir}/libscotcherrexit.so
@@ -95,7 +93,7 @@ This package contains development libraries for scotch.
 %{_libdir}/libscotchmetisv5.so
 %endif
 %dir %{_libdir}/cmake/scotch/
-%{_libdir}/cmake/scotch/ptesmumpsTargets*
+#{_libdir}/cmake/scotch/ptesmumpsTargets*
 %{_libdir}/cmake/scotch/esmumpsTargets*
 %{_libdir}/cmake/scotch/SCOTCH*
 %{_libdir}/cmake/scotch/scotchTargets*
@@ -136,18 +134,18 @@ compiled with openmpi.
 
 %files -n %{libname_openmpi}
 %license doc/CeCILL-C_V1-en.txt
-%{_libdir}/openmpi/lib/libesmumps.so.7*
-%{_libdir}/openmpi/lib/libscotch.so.7*
-%{_libdir}/openmpi/lib/libscotcherr.so.7*
-%{_libdir}/openmpi/lib/libscotcherrexit.so.7*
-%{_libdir}/openmpi/lib/libptscotch.so.7*
-%{_libdir}/openmpi/lib/libptesmumps.so.7*
-%{_libdir}/openmpi/lib/libptscotcherr.so.7*
-%{_libdir}/openmpi/lib/libptscotcherrexit.so.7*
+%{_libdir}/openmpi/lib/libesmumps.so.%{major}*
+%{_libdir}/openmpi/lib/libscotch.so.%{major}*
+%{_libdir}/openmpi/lib/libscotcherr.so.%{major}*
+%{_libdir}/openmpi/lib/libscotcherrexit.so.%{major}*
+%{_libdir}/openmpi/lib/libptscotch.so.%{major}*
+%{_libdir}/openmpi/lib/libptesmumps.so.%{major}*
+%{_libdir}/openmpi/lib/libptscotcherr.so.%{major}*
+%{_libdir}/openmpi/lib/libptscotcherrexit.so.%{major}*
 %if %{with metis}
-%{_libdir}/openmpi/lib/libscotchmetisv3.so.7*
-%{_libdir}/openmpi/lib/libscotchmetisv5.so.7*
-%{_libdir}/openmpi/lib/libptscotchparmetisv3.so.7*
+%{_libdir}/openmpi/lib/libscotchmetisv3.so.%{major}*
+%{_libdir}/openmpi/lib/libscotchmetisv5.so.%{major}*
+%{_libdir}/openmpi/lib/libptscotchparmetisv3.so.%{major}*
 %endif
 %endif
 
