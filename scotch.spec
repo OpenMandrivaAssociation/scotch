@@ -23,7 +23,7 @@
 
 Summary:	Graph, mesh and hypergraph partitioning library
 Name:		scotch
-Version:	7.0.6
+Version:	7.0.7
 Release:	1
 Group:		System/Libraries
 License:	CeCILL-C
