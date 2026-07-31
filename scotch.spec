@@ -23,7 +23,7 @@
 
 Summary:	Graph, mesh and hypergraph partitioning library
 Name:		scotch
-Version:	7.0.7
+Version:	7.0.12
 Release:	1
 Group:		System/Libraries
 License:	CeCILL-C
@@ -221,7 +221,7 @@ to build against the scotch.
 #-----------------------------------------------------------------------
 
 %prep
-%autosetup -N -n %{name}-v%{version}
+%autosetup -N -n scotch-v7.0.12
 
 %build
 export FC=gfortran
